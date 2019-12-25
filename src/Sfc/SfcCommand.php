@@ -5,6 +5,7 @@ namespace Acme\Sfc;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -20,7 +21,7 @@ class SfcCommand extends Command
     {
         $this->setName('sfc:sample1')
             ->setDescription('symfony/console のサンプル')
-            ->addOption('outDir', null, InputOption::VALUE_REQUIRED, '出力先ディレクトリ')
+            ->addArgument('outDir', InputArgument::REQUIRED, '出力先ディレクトリ')
             ->addOption('baseDate', null, InputOption::VALUE_REQUIRED, '基準日。デフォルトはシステム日時。', date('Y-m-d H:i:s'))
             ->addOption('keepFile', null, InputOption::VALUE_REQUIRED, '(開発用) 一時ファイルを残すか。0=残さない 1=残す。', '0')
             ->addOption('userId', null, InputOption::VALUE_REQUIRED, '(開発用) ユーザIDを指定する');
@@ -31,6 +32,7 @@ class SfcCommand extends Command
         $startedUsec = microtime(true);
 
         $this->validate($input);
+        var_dump($input->getArguments());
         var_dump($input->getOptions());
 
         // progress bar
@@ -63,8 +65,8 @@ class SfcCommand extends Command
     private function validate(InputInterface $input)
     {
         // cli
-        if (null === $input->getOption('outDir') || !is_dir($input->getOption('outDir'))) {
-            throw new \InvalidArgumentException(sprintf('invalid outDir "%s".', $input->getOption('outDir')));
+        if (null === $input->getArgument('outDir') || !is_dir($input->getArgument('outDir'))) {
+            throw new \InvalidArgumentException(sprintf('invalid outDir "%s".', $input->getArgument('outDir')));
         }
         if (false === strtotime($input->getOption('baseDate'))) {
             throw new \InvalidArgumentException(sprintf('invalid baseDate "%s".', $input->getOption('baseDate')));
