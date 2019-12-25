@@ -2,7 +2,8 @@
     "require": {
         "psr/container": "^1.0",
         "pear/console_commandline": "^1.2",
-        "monolog/monolog": "^2.0"
+        "monolog/monolog": "^2.0",
+        "symfony/console": "^5.0"
     },
     "autoload": {
         "psr-4": {
