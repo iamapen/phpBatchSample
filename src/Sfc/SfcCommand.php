@@ -20,7 +20,7 @@ class SfcCommand extends Command
     protected function configure()
     {
         $this->setName('sfc:sample1')
-            ->setDescription('symfony/console のサンプル')
+            ->setDescription('symfony/console の利用例')
             ->addArgument('outDir', InputArgument::REQUIRED, '出力先ディレクトリ')
             ->addOption('baseDate', null, InputOption::VALUE_REQUIRED, '基準日。デフォルトはシステム日時。', date('Y-m-d H:i:s'))
             ->addOption('keepFile', null, InputOption::VALUE_REQUIRED, '(開発用) 一時ファイルを残すか。0=残さない 1=残す。', '0')
