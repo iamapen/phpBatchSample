@@ -1,5 +1,6 @@
 {
     "require": {
-        "psr/container": "^1.0"
+        "psr/container": "^1.0",
+        "pear/console_commandline": "^1.2"
     }
 }
