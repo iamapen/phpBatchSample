@@ -1,6 +1,7 @@
 {
     "require": {
         "psr/container": "^1.0",
-        "pear/console_commandline": "^1.2"
+        "pear/console_commandline": "^1.2",
+        "monolog/monolog": "^2.0"
     }
 }
