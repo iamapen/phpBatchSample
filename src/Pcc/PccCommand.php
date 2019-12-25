@@ -119,6 +119,3 @@ class PccCommand
         return $cli;
     }
 }
-
-$command = new PccCommand();
-$command->execute();

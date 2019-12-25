@@ -9,11 +9,11 @@ composer install
 
 pear/console_commandline
 ```bash
-php src/Pcc/PccCommand.php
-php src/Pcc/PccCommand.php -h
-php src/Pcc/PccCommand.php /notfound
-php src/Pcc/PccCommand.php /tmp
-php src/Pcc/PccCommand.php /tmp --keepFile=1  
+php bin/pcc.php
+php bin/pcc.php -h
+php bin/pcc.php /notfound
+php bin/pcc.php /tmp
+php bin/pcc.php /tmp --keepFile=1  
 ```
 
 symfony/console
